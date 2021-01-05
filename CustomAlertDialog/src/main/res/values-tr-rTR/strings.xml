@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="module_name">Custom Alert Dialog</string>
+    <string name="ok">Tamam</string>
+    <string name="yes">Evet</string>
+    <string name="no">Hayır</string>
+    <string name="go_on">Devam</string>
+    <string name="cancel">Vazgeç</string>
+    <string name="null_title_description">Başlık bilgisi alınamadı!</string>
+    <string name="null_message_description">Mesaj bilgisi alınamadı!</string>
+</resources>

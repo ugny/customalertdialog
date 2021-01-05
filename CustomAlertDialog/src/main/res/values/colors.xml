@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_color">#212121</color>
+    <color name="default_title_background_color">#4E308F</color>
+    <color name="icon_tint_color">#FFFFFF</color>
+    <color name="text_color">#FFFFFF</color>
+    <color name="color_error">#DF4040</color>
+    <color name="color_warning">#D8AA02</color>
+    <color name="color_success">#22AC15</color>
+    <color name="color_info">#2B43CC</color>
+    <color name="color_neutral">#434343</color>
+    <color name="color_transparent">#00000000</color>
+</resources>
