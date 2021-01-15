@@ -28,16 +28,17 @@ public class TesterClass {
     private void customAlertDialogTester() {
         testDefaultDialog();
         setColors();
-        testPrepareDialogs();
-        testPrepareDialogsWithLargeIcon();
-        testPracticalDialogs();
-        testCustomDialogs();
-        testDialogsWithLargeIcon();
 
         setItems();
-        testItems();
-        testSingleChoiceItems();
         testMultiChoiceItems();
+        testSingleChoiceItems();
+        testItems();
+
+        testDialogsWithLargeIcon();
+        testCustomDialogs();
+        testPracticalDialogs();
+        testPrepareDialogsWithLargeIcon();
+        testPrepareDialogs();
     }
 
     /**
