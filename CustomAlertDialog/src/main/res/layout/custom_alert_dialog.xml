@@ -21,21 +21,21 @@
             android:id="@+id/crdDialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="@dimen/dialog_corner_radius"
+            app:cardCornerRadius="@dimen/custom_alert_dialog_corner_radius"
             app:cardElevation="0dp">
 
             <LinearLayout
                 android:id="@+id/pnlDialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/background_color"
+                android:background="@color/custom_alert_dialog_background_color"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/pnlTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/default_title_background_color"
+                    android:background="@color/custom_alert_dialog_default_title_background_color"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingStart="10dp"
@@ -43,11 +43,11 @@
 
                     <ImageView
                         android:id="@+id/imgIcon"
-                        android:layout_width="@dimen/icon_size"
-                        android:layout_height="@dimen/icon_size"
+                        android:layout_width="@dimen/custom_alert_dialog_icon_size"
+                        android:layout_height="@dimen/custom_alert_dialog_icon_size"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
-                        android:contentDescription="@string/module_name"
+                        android:contentDescription="@string/custom_alert_dialog_module_name"
                         android:visibility="gone" />
 
                     <TextView
@@ -83,11 +83,11 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@color/color_neutral"
+                        android:background="@color/custom_alert_dialog_color_neutral"
                         android:gravity="center"
                         android:padding="9dp"
                         android:text="@string/no"
-                        android:textColor="@color/text_color"
+                        android:textColor="@color/custom_alert_dialog_text_color"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:visibility="gone" />
@@ -97,11 +97,11 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@color/color_success"
+                        android:background="@color/custom_alert_dialog_color_success"
                         android:gravity="center"
                         android:padding="9dp"
                         android:text="@string/ok"
-                        android:textColor="@color/text_color"
+                        android:textColor="@color/custom_alert_dialog_text_color"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:visibility="gone" />
