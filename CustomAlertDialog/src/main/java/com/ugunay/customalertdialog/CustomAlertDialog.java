@@ -21,35 +21,35 @@ import android.widget.TextView;
 /**
  * * Created by Uğur Günay on 20/12/2020.
  * <p>
- * Bu sınıf standart alert dialoglardan sıkılmış kişilere özelleştirilebilir alert custom_alert_dialog
+ * Bu sınıf standart alert dialoglardan sıkılmış kişilere özelleştirilebilir alert dialog
  * kullanımı sunar. Bu sınıf ile
  * * Başlığın metin rengi ve başlık alanının arka plan rengi,
  * * Mesajın metin rengi ve mesaj alanının arka plan rengi,
  * * Pozitif ve negatif butonların metin ve arka plan renkleri
  * özelleştirilebilir. Ayrıca pozitif ve negatif butonlara icon ataması da yapılabilir.
- * Alert custom_alert_dialog penceresinin ikonuna ait icon tint color da özelleştirilebilir.
+ * Alert dialog penceresinin ikonuna ait icon tint color da özelleştirilebilir.
  * <p>
  * Yazılımcı isterse geliştirdiği uygulamanın launcher activity'sinde bu renk değişkenlerine
  * bir kereliğine atama yapabilir. Static olan değişkenler sayesinde projenin her yerinde
  * aynı tasarım geçerli olucaktır. Yazılımcı renk değişkenlerine bir atama yapmazsa değişkenlerin
  * varsayılan renkleri geçerli olucaktır. Yazılımcı isterse tanımladığı alert dialoga özel
- * bu renkleri özelleştirebilir. Bu özel alert custom_alert_dialog tanımlamasındaki atanan renklerden
+ * bu renkleri özelleştirebilir. Bu özel alert dialog tanımlamasındaki atanan renklerden
  * varsayılan renkler ya da yazılımcının en başta belirlediği renkler etkilenmez.
  * <p>
  * Renk değişkenlerine atama işlemi eğer color dosyasından yapılacaksa
  * context.getResources().getColor(R.color.your_color) yöntemi kullanılmalıdır.
  * <p>
- * En çok kullanılan alert custom_alert_dialog tasarımlarını hazır olarak kullanıma sunar. Bu sınıf sayesinde
- * * Başlıksız sadece mesaj ve tamam butonu bulunan bir alert custom_alert_dialog,
- * * İkonsuz, başlığı, mesajı ve tamam butonu bulunan bir alert custom_alert_dialog,
+ * En çok kullanılan alert dialog tasarımlarını hazır olarak kullanıma sunar. Bu sınıf sayesinde
+ * * Başlıksız sadece mesaj ve tamam butonu bulunan bir alert dialog,
+ * * İkonsuz, başlığı, mesajı ve tamam butonu bulunan bir alert dialog,
  * * Bilgilendirme, başarı ve hata durumlarına ait alert dialoglar,
  * (Bu alert dialoglar sabit ikonlara ve tamam butonuna sahiptir. Başlık ve mesaj bilgisini dışarıdan alır.)
- * * Evet-Hayır butonlarına sahip uyarı yapan bir alert custom_alert_dialog, (Evet butonuna ait OnClickListener olayını dışarıdan alır.)
+ * * Evet-Hayır butonlarına sahip uyarı yapan bir alert dialog, (Evet butonuna ait OnClickListener olayını dışarıdan alır.)
  * gibi alert dialoglar hazır olarak kullanılabilir.
  * <p>
- * Farklı bir tasarımda alert custom_alert_dialog kullanılmak istenirse büyük ikonlu bir alert custom_alert_dialog kullanımı
+ * Farklı bir tasarımda alert dialog kullanılmak istenirse büyük ikonlu bir alert dialog kullanımı
  * sunan setDialogWithLargeIcon() fonksiyonu tercih edilebilir. Uygulama izinleriyle ilgili
- * kullanıcıya bilgi vermek için bu büyük ikonlu alert custom_alert_dialog tasarımının yardımıyla oluşturulmuş
+ * kullanıcıya bilgi vermek için bu büyük ikonlu alert dialog tasarımının yardımıyla oluşturulmuş
  * showPermissionDialog() fonksiyonu kullanılabilir.
  * <p>
  * CharSequence dizilerini gösteren, dizi üzerinde tekli veya çoklu seçim işlemi yapılmasını sağlayan
@@ -100,10 +100,10 @@ public class CustomAlertDialog {
     //---------------------------------Prepared Dialogs---------------------------------------------
 
     /**
-     * Bilgilendirme ile ilgili hazır bir alert custom_alert_dialog penceresi gösterir.
+     * Bilgilendirme ile ilgili hazır bir alert dialog penceresi gösterir.
      *
-     * @param title   custom_alert_dialog başlığı.
-     * @param message custom_alert_dialog mesajı.
+     * @param title   dialog başlığı.
+     * @param message dialog mesajı.
      */
     public void showInfoDialog(String title, String message) {
         showPreparedDialog(context.getResources().getColor(R.color.custom_alert_dialog_color_info),
@@ -111,10 +111,10 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Başarılı bir işlem sonucuna ait hazır bir alert custom_alert_dialog penceresi gösterir.
+     * Başarılı bir işlem sonucuna ait hazır bir alert dialog penceresi gösterir.
      *
-     * @param title   custom_alert_dialog başlığı.
-     * @param message custom_alert_dialog mesajı.
+     * @param title   dialog başlığı.
+     * @param message dialog mesajı.
      */
     public void showSuccessDialog(String title, String message) {
         showPreparedDialog(context.getResources().getColor(R.color.custom_alert_dialog_color_success),
@@ -122,10 +122,10 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Hatalı bir işlem sonucuna ait hazır bir alert custom_alert_dialog penceresi gösterir.
+     * Hatalı bir işlem sonucuna ait hazır bir alert dialog penceresi gösterir.
      *
-     * @param title   custom_alert_dialog başlığı.
-     * @param message custom_alert_dialog mesajı.
+     * @param title   dialog başlığı.
+     * @param message dialog mesajı.
      */
     public void showErrorDialog(String title, String message) {
         showPreparedDialog(context.getResources().getColor(R.color.custom_alert_dialog_color_error),
@@ -133,12 +133,12 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Hazır alert custom_alert_dialog pencereleri gösterir.
+     * Hazır alert dialog pencereleri gösterir.
      *
-     * @param titleAndButtonBackgroundColor custom_alert_dialog başlığı ve butonuna ait arka plan rengi.
-     * @param iconResId                     custom_alert_dialog başlığına ait icon.
-     * @param title                         custom_alert_dialog başlığı.
-     * @param message                       custom_alert_dialog mesajı.
+     * @param titleAndButtonBackgroundColor dialog başlığı ve butonuna ait arka plan rengi.
+     * @param iconResId                     dialog başlığına ait icon.
+     * @param title                         dialog başlığı.
+     * @param message                       dialog mesajı.
      */
     private void showPreparedDialog(final int titleAndButtonBackgroundColor, final int iconResId,
                                     String title, String message) {
@@ -150,7 +150,7 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Hazır alert custom_alert_dialog pencrelerin (bilgilendirme, başarı ve hata) tamam butonunu set eder.
+     * Hazır alert dialog pencrelerin (bilgilendirme, başarı ve hata) tamam butonunu set eder.
      *
      * @param backgroundColor tamam butonuna ait arka plan rengi.
      */
@@ -167,11 +167,11 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Uyarı durumuna ait hazır alert custom_alert_dialog penceresi gösterir.
+     * Uyarı durumuna ait hazır alert dialog penceresi gösterir.
      *
-     * @param title                 custom_alert_dialog başlığı.
-     * @param message               custom_alert_dialog mesajı.
-     * @param btnYesOnClickListener custom_alert_dialog penceresindeki Yes butonuna ait OnClickListener olayı.
+     * @param title                 dialog başlığı.
+     * @param message               dialog mesajı.
+     * @param btnYesOnClickListener dialog penceresindeki Yes butonuna ait OnClickListener olayı.
      */
     public void showWarningDialog(String title, String message, final OnClickListener btnYesOnClickListener) {
         int colorWarning = context.getResources().getColor(R.color.custom_alert_dialog_color_warning);
@@ -195,9 +195,9 @@ public class CustomAlertDialog {
     // Büyük ikonlu hazır alert dialoglar başlık bilgisi bulundurmaz.
 
     /**
-     * Bilgilendirme ile ilgili büyük ikonlu hazır bir alert custom_alert_dialog penceresi gösterir.
+     * Bilgilendirme ile ilgili büyük ikonlu hazır bir alert dialog penceresi gösterir.
      *
-     * @param message custom_alert_dialog mesajı.
+     * @param message dialog mesajı.
      */
     public void showInfoDialog(String message) {
         showPreparedDialogWithLargeIcon(R.drawable.ic_info_for_custom_alert_dialog, message,
@@ -205,9 +205,9 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Başarılı bir işlem sonucuna ait büyük ikonlu hazır bir alert custom_alert_dialog penceresi gösterir.
+     * Başarılı bir işlem sonucuna ait büyük ikonlu hazır bir alert dialog penceresi gösterir.
      *
-     * @param message custom_alert_dialog mesajı.
+     * @param message dialog mesajı.
      */
     public void showSuccessDialog(String message) {
         showPreparedDialogWithLargeIcon(R.drawable.ic_check_circle_for_custom_alert_dialog, message,
@@ -215,9 +215,9 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Hatalı bir işlem sonucuna ait büyük ikonlu hazır bir alert custom_alert_dialog penceresi gösterir.
+     * Hatalı bir işlem sonucuna ait büyük ikonlu hazır bir alert dialog penceresi gösterir.
      *
-     * @param message custom_alert_dialog mesajı.
+     * @param message dialog mesajı.
      */
     public void showErrorDialog(String message) {
         showPreparedDialogWithLargeIcon(R.drawable.ic_error_for_custom_alert_dialog, message,
@@ -225,13 +225,13 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Büyük ikonlu hazır alert custom_alert_dialog pencereleri gösterir.
+     * Büyük ikonlu hazır alert dialog pencereleri gösterir.
      * Bu alert dialoglar başlık bilgisi bulundurmadığı için başlık bilgisi null girilmiştir.
      * Ayrıca mesaj metin rengi ile ikon tint rengi aynı yapılmıştır.
      * Böylece tasarımda bütünlük yakalanmaya çalışılmıştır.
      *
-     * @param iconResId            custom_alert_dialog başlığına ait icon.
-     * @param message              custom_alert_dialog mesajı.
+     * @param iconResId            dialog başlığına ait icon.
+     * @param message              dialog mesajı.
      * @param btnOkBackgroundColor ok butonuna ait arka plan rengi.
      */
     private void showPreparedDialogWithLargeIcon(final int iconResId, String message, final int btnOkBackgroundColor) {
@@ -242,13 +242,13 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Uyarı durumuna ait büyük ikonlu hazır alert custom_alert_dialog penceresi gösterir.
-     * Bu alert custom_alert_dialog başlık bilgisi bulundurmadığı için başlık bilgisi null girilmiştir.
+     * Uyarı durumuna ait büyük ikonlu hazır alert dialog penceresi gösterir.
+     * Bu alert dialog başlık bilgisi bulundurmadığı için başlık bilgisi null girilmiştir.
      * Ayrıca mesaj metin rengi ile ikon tint rengi aynı yapılmıştır.
      * Böylece tasarımda bütünlük yakalanmaya çalışılmıştır.
      *
-     * @param message               custom_alert_dialog mesajı.
-     * @param btnYesOnClickListener custom_alert_dialog penceresindeki Yes butonuna ait OnClickListener olayı.
+     * @param message               dialog mesajı.
+     * @param btnYesOnClickListener dialog penceresindeki Yes butonuna ait OnClickListener olayı.
      */
     public void showWarningDialog(String message, final OnClickListener btnYesOnClickListener) {
         setDialogWithLargeIcon(R.drawable.ic_warning_for_custom_alert_dialog, null, message);
@@ -270,7 +270,7 @@ public class CustomAlertDialog {
     //--------------------------------------Icon----------------------------------------------------
 
     /**
-     * Alert custom_alert_dialog başlık ikonunu set eder.
+     * Alert dialog başlık ikonunu set eder.
      * Yazılımcının başlık atamadan ikon ataması durumunda başlık arka plan rengi custom_alert_dialog.xml
      * dosyasındaki atanmış renk (varsayılan başlık arka plan rengi) geçerli olucaktır.
      *
@@ -319,11 +319,11 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Alert custom_alert_dialog başlığını set eder.
+     * Alert dialog başlığını set eder.
      *
-     * @param title           custom_alert_dialog başlığı.
-     * @param backgroundColor custom_alert_dialog başlığı arka plan rengi.
-     * @param textColor       custom_alert_dialog başlığı metin rengi.
+     * @param title           dialog başlığı.
+     * @param backgroundColor dialog başlığı arka plan rengi.
+     * @param textColor       dialog başlığı metin rengi.
      * @return this.
      */
     public CustomAlertDialog setTitle(String title, final int backgroundColor, final int textColor) {
@@ -342,9 +342,9 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Alert custom_alert_dialog başlığını set eder.
+     * Alert dialog başlığını set eder.
      *
-     * @param title custom_alert_dialog başlığı.
+     * @param title dialog başlığı.
      * @return this.
      */
     public CustomAlertDialog setTitle(String title) {
@@ -370,12 +370,12 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Alert custom_alert_dialog mesajını set eder.
+     * Alert dialog mesajını set eder.
      * Mesaj nesnesi her zaman gösterildiği için visibility özelliği set edilmemiştir.
      *
-     * @param message         custom_alert_dialog mesajı.
-     * @param backgroundColor custom_alert_dialog mesajı arka plan rengi.
-     * @param textColor       custom_alert_dialog mesajı metin rengi.
+     * @param message         dialog mesajı.
+     * @param backgroundColor dialog mesajı arka plan rengi.
+     * @param textColor       dialog mesajı metin rengi.
      * @return this.
      */
     public CustomAlertDialog setMessage(String message, final int backgroundColor, final int textColor) {
@@ -390,9 +390,9 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Alert custom_alert_dialog mesajını set eder.
+     * Alert dialog mesajını set eder.
      *
-     * @param message custom_alert_dialog mesajı.
+     * @param message dialog mesajı.
      * @return this.
      */
     public CustomAlertDialog setMessage(String message) {
@@ -419,7 +419,7 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Alert custom_alert_dialog penceresinin pozitif butonunu set eder.
+     * Alert dialog penceresinin pozitif butonunu set eder.
      *
      * @param btnTitle           pozitif buton başlığı.
      * @param listener           pozitif butona ait OnClickListener olayı.
@@ -450,7 +450,7 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Alert custom_alert_dialog penceresinin pozitif butonunu set eder.
+     * Alert dialog penceresinin pozitif butonunu set eder.
      *
      * @param btnTitle pozitif buton başlığı.
      * @param listener pozitif butona ait OnClickListener olayı.
@@ -494,7 +494,7 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Alert custom_alert_dialog penceresinin negatif butonunu set eder.
+     * Alert dialog penceresinin negatif butonunu set eder.
      *
      * @param btnTitle           negatif buton başlığı.
      * @param listener           negatif butona ait OnClickListener olayı.
@@ -525,7 +525,7 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Alert custom_alert_dialog penceresinin negatif butonunu set eder.
+     * Alert dialog penceresinin negatif butonunu set eder.
      *
      * @param btnTitle negatif buton başlığı.
      * @param listener negatif butona ait OnClickListener olayı.
@@ -617,8 +617,8 @@ public class CustomAlertDialog {
 //--------------------------------------------------------------------------------------------------
 
     /**
-     * Başlıksız, sadece mesaj gösteren ve tamam butonu barındıran bir alert custom_alert_dialog penceresi açar.
-     * Tamam butonunun görevi alert custom_alert_dialog penceresinden çıkış yapmayı sağlamaktır.
+     * Başlıksız, sadece mesaj gösteren ve tamam butonu barındıran bir alert dialog penceresi açar.
+     * Tamam butonunun görevi alert dialog penceresinden çıkış yapmayı sağlamaktır.
      * <p>
      * Bu fonksiyonda Tamam butonu özelleştirilmiştir.
      * Tamam butonunun zeminden biraz daha uzak mesaj alanına da biraz daha yakın olması için
@@ -626,7 +626,7 @@ public class CustomAlertDialog {
      * Tamam butonunun arka plan rengi mesaj alanıyla bütünleşmesi için messageBackgroundColor
      * olarak belirlenmiştir. Böylece daha sade bir tasarım elde edilmiştir.
      *
-     * @param message                 custom_alert_dialog mesajı.
+     * @param message                 dialog mesajı.
      * @param positiveButtonTextColor pozitif butonun textColor rengi.
      */
     public void showDialogWithoutTitle(String message, final int positiveButtonTextColor) {
@@ -650,20 +650,20 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Başlıksız, sadece mesaj gösteren ve tamam butonu barındıran bir alert custom_alert_dialog penceresi açar.
+     * Başlıksız, sadece mesaj gösteren ve tamam butonu barındıran bir alert dialog penceresi açar.
      * Pozitif butonun textColor rengi titleTextColor olarak belirlenmiştir.
      *
-     * @param message custom_alert_dialog mesajı.
+     * @param message dialog mesajı.
      */
     public void showDialogWithoutTitle(String message) {
         showDialogWithoutTitle(message, titleTextColor);
     }
 
     /**
-     * Başlık, mesaj ve tamam butonu barındıran ikonsuz bir alert custom_alert_dialog penceresi açar.
+     * Başlık, mesaj ve tamam butonu barındıran ikonsuz bir alert dialog penceresi açar.
      *
-     * @param title   custom_alert_dialog başlığı.
-     * @param message custom_alert_dialog mesajı.
+     * @param title   dialog başlığı.
+     * @param message dialog mesajı.
      */
     public void showDialogWithoutIcon(String title, String message) {
         setTitle(title);
@@ -678,7 +678,7 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Uygulama izinleriyle ilgili kullanıcıya bilgi vermek için bir alert custom_alert_dialog penceresi açar.
+     * Uygulama izinleriyle ilgili kullanıcıya bilgi vermek için bir alert dialog penceresi açar.
      * Başlık bilgisinin null atanmasına izin verilir. Null durumunda başlık alanı görünmeyecektir.
      *
      * @param iconResId                     izinle ilgili bir ikon.
@@ -700,15 +700,15 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Büyük ikonlu bir alert custom_alert_dialog penceresi gösterir.
-     * Farklı bir tasarımda alert custom_alert_dialog penceresi görüntülemek için bu fonksiyon yazılmıştır.
+     * Büyük ikonlu bir alert dialog penceresi gösterir.
+     * Farklı bir tasarımda alert dialog penceresi görüntülemek için bu fonksiyon yazılmıştır.
      * Bu tasarımda başlık arka plan rengi ile mesaj arka plan rengi aynıdır.
      * Böylece tasarım olarak pencerede bir bütünlük sağlanmıştır.
      * Başlık bilgisinin null atanmasına izin verilir. Null durumunda başlık alanı görünmeyecektir.
      *
-     * @param iconResId custom_alert_dialog ikonu.
-     * @param title     custom_alert_dialog başlığı (null olabilir).
-     * @param message   custom_alert_dialog mesajı.
+     * @param iconResId dialog ikonu.
+     * @param title     dialog başlığı (null olabilir).
+     * @param message   dialog mesajı.
      * @return this.
      */
     public CustomAlertDialog setDialogWithLargeIcon(final int iconResId, final String title, String message) {
@@ -751,7 +751,7 @@ public class CustomAlertDialog {
     //---------------------------Methods of Items---------------------------------------------------
 
     /**
-     * Dışarıdan aldığı CharSequence dizisini barındıran bir alert custom_alert_dialog penceresi gösterir.
+     * Dışarıdan aldığı CharSequence dizisini barındıran bir alert dialog penceresi gösterir.
      * Bu fonksiyonda mesaj alanı gösterilmez. setMessage() fonksiyonu setItems() fonksiyonundan
      * önce veya sonra tanımlansa bile mesaj alanı görünmeyecektir.
      *
@@ -795,7 +795,7 @@ public class CustomAlertDialog {
     }
 
     /**
-     * Dışarıdan aldığı CharSequence dizisini barındıran bir alert custom_alert_dialog penceresi gösterir.
+     * Dışarıdan aldığı CharSequence dizisini barındıran bir alert dialog penceresi gösterir.
      *
      * @param items    liste halinde gösterilmek istenen CharSequence dizisi.
      * @param listener liste üzerindeki herhangi bir elemana tıklanma olayı.
@@ -807,7 +807,7 @@ public class CustomAlertDialog {
 
     /**
      * Dışarıdan aldığı CharSequence dizisi üzerinde tek bir elemanın seçilebilmesini sağlayan
-     * bir alert custom_alert_dialog penceresi gösterir.
+     * bir alert dialog penceresi gösterir.
      * Bu fonksiyonda mesaj alanı gösterilmez. setMessage() fonksiyonu setSingleChoiceItems()
      * fonksiyonundan önce veya sonra tanımlansa bile mesaj alanı görünmeyecektir.
      *
@@ -860,7 +860,7 @@ public class CustomAlertDialog {
 
     /**
      * Dışarıdan aldığı CharSequence dizisi üzerinde çoklu seçim işlemi yapılmasına olanak sağlayan
-     * bir alert custom_alert_dialog penceresi gösterir.
+     * bir alert dialog penceresi gösterir.
      * Bu fonksiyonda mesaj alanı gösterilmez. setMessage() fonksiyonu setMultiChoiceItems()
      * fonksiyonundan önce veya sonra tanımlansa bile mesaj alanı görünmeyecektir.
      *
@@ -971,7 +971,7 @@ public class CustomAlertDialog {
      */
     public interface OnClickListener {
         /**
-         * @param dialog this custom_alert_dialog.
+         * @param dialog this dialog.
          */
         void onClick(CustomAlertDialog dialog);
     }
@@ -981,7 +981,7 @@ public class CustomAlertDialog {
      */
     public interface OnItemClickListener {
         /**
-         * @param dialog this custom_alert_dialog.
+         * @param dialog this dialog.
          * @param which  tıklanan elemanın (textView, radioButton) items dizisindeki index bilgisi.
          */
         void onClick(CustomAlertDialog dialog, int which);
@@ -992,7 +992,7 @@ public class CustomAlertDialog {
      */
     public interface OnMultiChoiceClickListener {
         /**
-         * @param dialog    this custom_alert_dialog.
+         * @param dialog    this dialog.
          * @param which     tıklanan elemanın (checkBox) items dizisindeki index bilgisi.
          * @param isChecked tıklanan elemanın (checkBox) yeni seçim durumu.
          */
